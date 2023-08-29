@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('airport', '0005_flight_crew'),
+        ("airport", "0005_flight_crew"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='ticket',
-            name='row',
+            model_name="ticket",
+            name="row",
             field=models.PositiveIntegerField(),
         ),
         migrations.AlterField(
-            model_name='ticket',
-            name='seat',
+            model_name="ticket",
+            name="seat",
             field=models.PositiveIntegerField(),
         ),
     ]

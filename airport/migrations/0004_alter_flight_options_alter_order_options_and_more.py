@@ -6,29 +6,34 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('airport', '0003_alter_ticket_options_alter_ticket_unique_together'),
+        ("airport", "0003_alter_ticket_options_alter_ticket_unique_together"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='flight',
-            options={'ordering': ['-departure_time']},
+            name="flight",
+            options={"ordering": ["-departure_time"]},
         ),
         migrations.AlterModelOptions(
-            name='order',
-            options={'ordering': ['-created_at']},
+            name="order",
+            options={"ordering": ["-created_at"]},
         ),
         migrations.AlterField(
-            model_name='order',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="order",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
         migrations.AlterField(
-            model_name='ticket',
-            name='order',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tickets', to='airport.order'),
+            model_name="ticket",
+            name="order",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="tickets",
+                to="airport.order",
+            ),
         ),
     ]
