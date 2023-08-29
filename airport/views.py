@@ -13,7 +13,6 @@ from airport.models import (
     Airplane,
     Flight,
     Order,
-
 )
 from airport.permissions import IsAdminOrIfAuthenticatedReadOnly
 
@@ -25,7 +24,9 @@ from airport.serializers import (
     AirplaneSerializer,
     FlightSerializer,
     OrderSerializer,
-    OrderListSerializer, FlightDetailSerializer, FlightListSerializer,
+    OrderListSerializer,
+    FlightDetailSerializer,
+    FlightListSerializer,
 )
 
 
